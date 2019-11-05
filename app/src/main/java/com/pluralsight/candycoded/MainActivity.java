@@ -75,6 +75,15 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+            Intent infoIntent = new
+                    Intent(this, InfoActivity.class);
+            startActivity(infoIntent);
+        return super.onOptionsItemSelected(item);
+
+    }
+
+    @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.main, menu);
@@ -98,15 +107,5 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        if (item.getItemId() == R.id.info) {
-            Intent infoIntent = new
-                    Intent(this, InfoActivity.class);
-            startActivity(infoIntent);
-            finish();
-        }
-        return super.onOptionsItemSelected(item);
 
-    }
 }
